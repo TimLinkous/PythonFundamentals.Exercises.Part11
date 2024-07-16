@@ -50,18 +50,19 @@ class Classroom():
         self.instructors.append(instructor)
 
     def remove_instructor(self, instructor_id: Instructor):
-        self.instructors = (inst for inst in self.instructors if inst.instructor_id != instructor_id)
+        self.instructors = [inst for inst in self.instructors if inst.instructor_id != instructor_id]
 
     def add_student(self, student: Student):
         self.students.append(student)
 
     def remove_student(self, student_id: Student):
-        self.students = (stud for stud in self.students if stud.student_id != student_id)
+        self.students = [stud for stud in self.students if stud.student_id != student_id]
 
     def print_instructors(self):
+        #for key, value in instructors.items()
         for instructor in self.instructors:
             print(f"{instructor.first_name} {instructor.last_name} - {instructor.instructor_id}")
-
+    
     def print_students(self):
-        for student in self.students:
+        for student in self.students: 
             print(f"{student.first_name} {student.last_name} - {student.student_id}")
